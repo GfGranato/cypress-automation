@@ -1,6 +1,6 @@
 const { Given, When, Then } = require("@badeball/cypress-cucumber-preprocessor");
-import * from './mapping/landingPage.js'
-import * from './mapping/apiGuide.js'
+const {nightwatchLogo, versionDropDown, listVersions, linkAPI} = require('.\\mapping\\landingPage.js')
+const {sesearchBar, inputSearch} = require('.\\mapping\\apiGuide.js')
     
 Given("the user access the application", () => {
     cy.visit('/')

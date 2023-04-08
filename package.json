@@ -6,7 +6,6 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "latest",
     "@cypress/browserify-preprocessor": "latest",
-    "cypress": "latest",
     "aggregate-error": "^3.1.0",
     "ansi-colors": "^4.1.3",
     "ansi-escapes": "^4.3.2",
@@ -170,8 +169,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open",
-    "cypress:spec": "cypress run --spec **/*.feature"
+    "cy:open": "cypress open",
+    "cy:spec": "cypress run --spec **/*.feature"
   },
   "repository": {
     "type": "git",
@@ -182,5 +181,8 @@
   "bugs": {
     "url": "https://github.com/GfGranato/cypress-automation/issues"
   },
-  "homepage": "https://github.com/GfGranato/cypress-automation#readme"
+  "homepage": "https://github.com/GfGranato/cypress-automation#readme",
+  "devDependencies": {
+    "cypress": "^12.9.0"
+  }
 }
