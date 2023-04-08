@@ -1,25 +1,30 @@
 const { Given, When, Then } = require("@badeball/cypress-cucumber-preprocessor");
-
+import * from './mapping/landingPage.js'
+import * from './mapping/apiGuide.js'
+    
 Given("the user access the application", () => {
     cy.visit('/')
 })
 
-Then('he should sees {int} cards', (num) => {
-    cy.get('div[class="card-content"]').should('have.length', num)
+Then('the nightwatch logo should be visible', () => {
+    cy.get(nightwatchLogo).should('be.visible')
+    
+})  
+Then('the version should be the Latest', () => {
+    cy.get(versionDropDown).click()
+    cy.get(listVersions).first().should('have.text', 'Latest')
 })
 
-Then('the {string} logo should be visible', (text) => {
-    cy.get('span[class="gradient-text"]').contains(text).should('be.visible')
+When('access the API page', () => {
+    cy.get(linkAPI).first(). click()
 })
 
-When('clicks the {string} card', (text) => {
-   cy.get('a[class="card card-course"] >div> h3').contains(text).click()
+When('searchs for {string}', (search) => {
+    cy.get(searchBar).click()
+    cy.get(inputSearch).type(search + KEYS.Enter)
 })
 
-Then('the url should be {string}', (url) => {
-    cy.url().should('contain',url)
-})
-
-Then('the {string} should be in table', (hero) => {
-    cy.get('tr>td>div').contains(hero).should('be.visible')
+Then('the url should contains "guide/extending-nightwatch/adding-custom-assertions.html#guide-container"', (url) => {
+    cy.url().should('include', url)
+    
 })

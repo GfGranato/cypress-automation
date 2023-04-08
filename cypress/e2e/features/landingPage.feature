@@ -3,17 +3,15 @@ Feature: Landing Page
     I want to access the site
     So I will see the cards and access them
 
- 
-    Scenario: Validate the 22 cards 
+    Background: Access application
         Given the user access the application
-        Then he should sees 22 cards
-        And the "QA Playground" logo should be visible 
 
-     Scenario: Validate Dynamic Table redirect 
-        Given the user access the application
-        When clicks the "Dynamic Table" card
-        Then the url should be "apps/dynamic-table/"
-        And the "Spider-Man" should be in table
+    Scenario: Validate Nightwatch Landing page
+        Then the nightwatch logo should be visible
+        And the version should be the Latest
+
+     Scenario: Validate API search bar 
+        When access the API page
+        And searchs for "Define custom assertions"
+        Then the url should contains "guide/extending-nightwatch/adding-custom-assertions.html#guide-container"
         
-        
-    

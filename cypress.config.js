@@ -18,6 +18,6 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/features/*.feature",
     stepDefinitions: ["cypress\\e2e\\*.js", "cypress\\e2e\\support\\step_definitions\\*.js"],
     setupNodeEvents,
-    baseUrl: 'https://qaplayground.dev',
+    baseUrl: 'https://nightwatchjs.org/',
   },
 });
